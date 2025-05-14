@@ -1,6 +1,6 @@
 {
-	"name": "@sveltejs/adapter-node",
-	"version": "5.2.12",
+	"name": "@qlever-llc/svelte-adapter-deno",
+	"version": "1.0.1",
 	"description": "Adapter for SvelteKit apps that generates a standalone Node server",
 	"keywords": [
 		"adapter",
@@ -12,11 +12,9 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/sveltejs/kit",
-		"directory": "packages/adapter-node"
+		"url": "https://github.com/qlever-llc/svelte-adapter-deno"
 	},
 	"license": "MIT",
-	"homepage": "https://svelte.dev",
 	"type": "module",
 	"exports": {
 		".": {
@@ -26,15 +24,20 @@
 		"./package.json": "./package.json"
 	},
 	"types": "index.d.ts",
-	"files": ["files", "index.js", "index.d.ts", "ambient.d.ts"],
+	"files": [
+		"files",
+		"index.js",
+		"index.d.ts",
+		"ambient.d.ts"
+	],
 	"scripts": {
 		"dev": "node -e \"fs.rmSync('files', { force: true, recursive: true })\" && rollup -cw",
 		"build": "node -e \"fs.rmSync('files', { force: true, recursive: true })\" && rollup -c",
 		"test": "vitest run",
 		"check": "tsc",
 		"lint": "prettier --check .",
-		"format": "pnpm lint --write",
-		"prepublishOnly": "pnpm build"
+		"format": "yarn lint --write",
+		"prepublishOnly": "yarn build"
 	},
 	"devDependencies": {
 		"@polka/url": "^1.0.0-next.28",

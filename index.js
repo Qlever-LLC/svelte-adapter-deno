@@ -64,7 +64,7 @@ export default function (opts = {}) {
 			// Collect runtime dependencies
 			const pkg = tryParse("package.json");
 			const deno = tryParse("deno.json") ?? tryParse("deno.jsonc");
-			const dependencies = Object.assign({}, deno.imports, pkg.dependencies);
+			const dependencies = Object.assign({}, deno?.imports, pkg?.dependencies);
 
 			// we bundle the Vite output so that deployments only need
 			// their production dependencies. Anything in devDependencies
